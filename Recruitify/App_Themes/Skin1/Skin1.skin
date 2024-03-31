@@ -1,0 +1,14 @@
+﻿<asp:TextBox SkinID="txtinput" CssClass="form-control" runat="server" BackColor="#f0f8ff" style=" position: relative; border-radius:15px; overflow: hidden;padding:15px"></asp:TextBox>
+<asp:RadioButtonList SkinID="radios" runat="server" RepeatDirection="Horizontal" class="form-control custom-radio" style="border-radius:15px;padding:15px;background:#f0f8ff;justify-content:center;align-items:center;display:grid"></asp:RadioButtonList>
+<asp:LinkButton SkinID="btnsubmit" runat="server" CssClass="form-control" ForeColor="White" Font-Size="20px" style="background-color:#5d52ba;transition: all 0.3s;margin:20px;border-radius:20px;justify-content:center;align-items:center;display:grid"  />
+<asp:Button SkinID="btnsubmit" runat="server" CssClass="form-control" ForeColor="White" Font-Size="20px" style="background-color:#5d52ba;transition: all 0.3s;margin:20px;border-radius:20px"  />
+<asp:FileUpload SkinID="upload" CssClass="form-control" runat="server" BackColor="#f0f8ff" style="position: relative; border-radius:15px; overflow: hidden;padding:15px"/>
+<asp:DropDownList SkinID="ddl" CssClass="form-select form-control" runat="server" BackColor="#f0f8ff" style="position: relative; border-radius:15px; overflow: hidden;padding:15px"></asp:DropDownList>
+
+
+<asp:TextBox SkinID="emp_txtinput" CssClass="form-control" runat="server" BackColor="#E7F9A9" style="position: relative; border-radius:15px; overflow: hidden;padding:15px"></asp:TextBox>
+<asp:RadioButtonList SkinID="emp_radios" runat="server" RepeatDirection="Horizontal" style="border-radius:15px;padding:15px;background:#E7F9A9;justify-content:center;align-items:center;display:grid"></asp:RadioButtonList>
+<asp:LinkButton SkinID="emp_lbsubmit" runat="server" CssClass="form-control" ForeColor="White" Font-Size="20px" style="background-color:#3D0814;transition: all 0.3s;margin:20px;border-radius:20px;justify-content:center;align-items:center;display:grid"  />
+<asp:Button SkinID="emp_btnsubmit" CssClass="form-control" runat="server" ForeColor="White" Font-Size="20px" style="background-color:#3D0814;transition: all 0.3s;border-radius:20px" />
+<asp:FileUpload SkinID="emp_upload" CssClass="form-control" runat="server" BackColor="#E7F9A9" style=" position: relative; border-radius:15px; overflow: hidden;padding:15px"/>
+<asp:DropDownList SkinID="emp_ddl" CssClass="form-select form-control" runat="server" BackColor="#E7F9A9" style="position: relative; border-radius:15px; overflow: hidden;padding:15px"></asp:DropDownList>

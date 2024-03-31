@@ -1,0 +1,232 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EmployerMaster.master.cs" Inherits="Recruitify.Employer.EmployerMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title></title>
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../css/owl.carousel.min.css" rel="stylesheet">
+
+        <link href="../css/owl.theme.default.min.css" rel="stylesheet">
+
+        <link href="tooplate-Recruitify-job.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="shortcut icon" type="image/x-icon" href="../images/logo.png" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="../images/logo.png" class="img-fluid logo-image">
+
+                    <div class="d-flex flex-column">
+                        <strong class="logo-text">Recruitify</strong>
+                        <small class="logo-slogan">Online Job Portal</small>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-center ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.aspx">Homepage</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.aspx">About Recruitify</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="Your_Uploads.aspx">Your Uploads</a></li>
+                            
+                                <li><a class="dropdown-item" href="Job_Post.aspx">Add New Jobs</a></li>
+
+                                <li><a class="dropdown-item" href="Company_Add.aspx">Add Company</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.aspx">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-auto">
+                            <asp:ImageButton ID="ibprofile" runat="server" CausesValidation="false"  CssClass="avatar-image img-fluid" Visible="False" Width="50" Height="50" />
+                        </li>
+                        
+                        <li class="nav-item ">
+                            <asp:LinkButton ID="lbRegorProfile" runat="server" CausesValidation="false" CssClass="nav-link" OnClick="lbRegorProfile_Click"></asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item">
+                             <asp:LinkButton ID="lbLoginorLogout" runat="server" CausesValidation="false" CssClass="nav-link custom-btn btn" OnClick="lbLoginorLogout_Click"></asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-3">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="../images/logo.png" class="img-fluid logo-image">
+
+                            <div class="d-flex flex-column">
+                                <strong class="logo-text">Recruitify</strong>
+                                <small class="logo-slogan">Online Job Portal</small>
+                            </div>
+                        </div>  
+
+                        <p class="mb-2">
+                            <i class="custom-icon bi-globe me-1"></i>
+
+                            <a href="#" class="site-footer-link">
+                                www.jobbportal.com
+                            </a>
+                        </p>
+
+                        <p class="mb-2">
+                            <i class="custom-icon bi-telephone me-1"></i>
+
+                            <a href="tel: 305-240-9671" class="site-footer-link">
+                                992-532-3126
+                            </a>
+                        </p>
+
+                        <p>
+                            <i class="custom-icon bi-envelope me-1"></i>
+
+                            <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                                info@jobportal.co
+                            </a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-6 ms-lg-auto">
+                        <h6 class="site-footer-title">Company</h6>
+
+                        <ul class="footer-menu">
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">About</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Blog</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Jobs</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <h6 class="site-footer-title">Resources</h6>
+
+                        <ul class="footer-menu">
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Guide</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">How it works</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Salary Tool</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-8 col-12 mt-3 mt-lg-0">
+                        <img src="../images/logo.png" width="212" height="212" style="justify-content:center">      
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12 d-flex align-items-center">
+
+                            <ul class="footer-menu d-flex">
+                                <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy Policy</a></li>
+
+                                <li class="footer-menu-item"><a href="#" class="footer-menu-link">Terms</a></li>
+                            </ul>
+                        </div>
+
+                         <div class="col-lg-5 col-12 mt-2 mt-lg-0">
+                            <ul class="social-icon">
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-linkedin"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-youtube"></a>
+                                </li>
+                            </ul>
+                        </div> 
+
+                        <div class="col-lg-3 col-12 mt-2 d-flex align-items-center mt-lg-0">
+                    </div>
+
+                        <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/counter.js"></script>
+        <script src="../js/custom.js"></script>
+                </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
