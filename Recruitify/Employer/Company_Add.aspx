@@ -3,7 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
      <main>
-            
             <header class="site-header">
                 <div class="section-overlay"></div>
                 <div class="container">

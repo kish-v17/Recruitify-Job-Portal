@@ -46,7 +46,23 @@ namespace Recruitify
             getcon();
             upload();
             
-            cmd = new SqlCommand("insert into User_tbl(U_Type_Id,U_First_Name,U_Last_Name,U_Email,U_DOB,U_Gender,U_Mobile,U_City,U_State,U_Country,U_Image,U_Password,U_Reg_Date) values('" + rblRegAs.SelectedValue + "','" + txtRegFnm.Text + "','" + txtRegLnm.Text + "','" + txtRegEml.Text + "','" + txtRegDob.Text + "','" + rblRegGen.SelectedValue + "','" + txtRegMbl.Text + "','" + txtRegCity.Text + "','" + txtRegState.Text + "','" + txtRegCountry.Text + "','" + file + "','" + txtRegPass.Text + "','" + DateTime.Now + "')", con);
+            string query1= "insert into User_tbl(U_Type_Id,U_First_Name,U_Last_Name,U_Email,U_DOB,U_Gender,U_Mobile,U_City,U_State,U_Country,U_Image,U_Password,U_Reg_Date) values(@utid,@ufnm,@ulnm,@uemail,@udob,@ugen,@umbl,@ucity,@ustate,@ucountry,@uimage,@upass,@uregdate)"; 
+            
+            cmd = new SqlCommand(query1, con);
+            cmd.Parameters.AddWithValue("@utid", rblRegAs.SelectedValue);
+            cmd.Parameters.AddWithValue("@ufnm", txtRegFnm.Text);
+            cmd.Parameters.AddWithValue("@ulnm", txtRegLnm.Text);
+            cmd.Parameters.AddWithValue("@uemail", txtRegEml.Text);
+            cmd.Parameters.AddWithValue("@udob", txtRegDob.Text);
+            cmd.Parameters.AddWithValue("@ugen", rblRegGen.SelectedValue);
+            cmd.Parameters.AddWithValue("@umbl", txtRegMbl.Text);
+            cmd.Parameters.AddWithValue("@ucity", txtRegCity.Text);
+            cmd.Parameters.AddWithValue("@ustate", txtRegState.Text);
+            cmd.Parameters.AddWithValue("@ucountry", txtRegCountry.Text);
+            cmd.Parameters.AddWithValue("@uimage", file);
+            cmd.Parameters.AddWithValue("@upass", txtRegPass.Text);
+            cmd.Parameters.AddWithValue("@uregdate", DateTime.Now);
+
             cmd.ExecuteNonQuery();
             Response.Redirect("Login.aspx");
         }

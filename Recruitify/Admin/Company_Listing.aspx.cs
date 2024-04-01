@@ -20,7 +20,7 @@ namespace Recruitify.Admin
         ConHelper ch;
         protected void Page_Load(object sender, EventArgs e)
         {
-            fillData();
+            fillList();
         }
         void getCon()
         {
@@ -28,23 +28,14 @@ namespace Recruitify.Admin
             con = ch.StartCon();
         }
 
-        DataSet select()
+        void fillList()
         {
             getCon();
             da = new SqlDataAdapter("select * from Company_tbl C INNER JOIN User_tbl U on C.C_Posted_By_Id=U.U_Id", con);
             ds = new DataSet();
             da.Fill(ds);
-            return ds;
-        }
-        void fillData()
-        {
-            DataList1.DataSource = select();
-            DataList1.DataBind();
-        }
-
-        protected void DataList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            companyList.DataSource = ds;
+            companyList.DataBind();
         }
     }
 }

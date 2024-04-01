@@ -33,7 +33,7 @@
                         </div>
 
                         
-                        <asp:DataList ID="DataList1" runat="server">
+                        <asp:DataList ID="companyList" runat="server">
 
                             <ItemTemplate>
                                 <div class="col-lg-12 col-12"> 
@@ -65,7 +65,7 @@
                                                             <asp:Label ID="lblEyear" runat="server" style="width:60px" class="badge" Text='<%# Eval("C_Establish_Year") %>'></asp:Label>
                                                         </p>
                                                         <p class="mb-0">
-                                                            <asp:Label ID="lbluser" class="badge badge-level" runat="server" Text='<%# Eval("U_First_Name")+" "+Eval("U_Last_Name") %>'></asp:Label>
+                                                            <asp:Label ID="lbluser" class="badge badge-level" runat="server" Text='<%# "Posted by " + Eval("U_First_Name")+" "+Eval("U_Last_Name") %>'></asp:Label>
                                                         </p>
                                                     </div>
                                                 </div>

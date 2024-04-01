@@ -24,6 +24,7 @@ namespace Recruitify
             ch = new ConHelper();
             con = ch.StartCon();
         }
+
         protected void btnlogin_Click(object sender, EventArgs e)
         {
             GetCon();

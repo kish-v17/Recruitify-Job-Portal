@@ -43,7 +43,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-6 mx-auto">
-                                    <asp:LinkButton ID="btnlogin" runat="server" Text="Login" SkinID="btnsubmit" OnClick="btnlogin_Click" />
+                                    <asp:Button ID="btnlogin" SkinID="btnsubmit" runat="server" Text="Login" OnClick="btnlogin_Click" />
                                 </div>
                                 <br/>
                                 <h5 style="text-align:center;">Don't have an account??&nbsp;<u><a href="Register.aspx"> Sign up</a></u></h5>

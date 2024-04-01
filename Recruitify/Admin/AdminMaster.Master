@@ -14,6 +14,8 @@
 
         <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         
         <link rel="preconnect" href="https://fonts.gstatic.com" >
 
@@ -30,6 +32,14 @@
         <link href="tooplate-Recruitify-job.css" rel="stylesheet">
 
         <link rel="shortcut icon" type="../image/x-icon" href="../images/logo.png" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+        function formatTimeAgo(dateString, controlId) {
+            let dateTime = moment(dateString);
+            let timeAgo = dateTime.fromNow();
+            document.getElementById(controlId).innerText = timeAgo;
+        }
+    </script>
         
     <asp:ContentPlaceHolder ID="head" runat="server">
         
@@ -68,9 +78,9 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                <li><a class="dropdown-item" href="User_Listings.aspx">Users</a></li>
-                                <li><a class="dropdown-item" href="Job_Listings.aspx">Jobs</a></li>
-                                <li><a class="dropdown-item" href="Company-Listings.aspx">Companies</a></li>
+                                <li><a class="dropdown-item" href="User_Listing.aspx">Users</a></li>
+                                <li><a class="dropdown-item" href="Job_Listing.aspx">Jobs</a></li>
+                                <li><a class="dropdown-item" href="Company_Listing.aspx">Companies</a></li>
                                 <li><a class="dropdown-item" href="Applications.aspx">Applications</a></li>
                                 
                             </ul>
@@ -224,6 +234,7 @@
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/counter.js"></script>
         <script src="js/custom.js"></script>
+        <script src="path/to/moment.js"></script>
             </asp:ContentPlaceHolder>
         </div>
     </form>

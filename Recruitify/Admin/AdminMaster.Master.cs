@@ -23,6 +23,19 @@ namespace Recruitify.Admin
                 lbRegorProfile.Text = "Register";
                 lbLoginorLogout.Text = "Login";
             }
+
+            if (!IsPostBack)
+            {
+                // Sample data - replace this with your actual data retrieval
+                List<DateTime> dateTimes = new List<DateTime>
+                {
+                    DateTime.Now.AddMinutes(-10),
+                    DateTime.Now.AddHours(-3),
+                    DateTime.Now.AddDays(-1),
+                    DateTime.Now.AddDays(-7),
+                    DateTime.Now.AddYears(-1)
+                };
+            }
         }
 
         protected void lbRegorProfile_Click(object sender, EventArgs e)

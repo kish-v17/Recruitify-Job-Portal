@@ -113,7 +113,8 @@
     <Content Include="Admin\Applications.aspx" />
     <Content Include="Admin\Company_Listing.aspx" />
     <Content Include="Admin\Contact.aspx" />
-    <Content Include="Admin\Job-Listing.aspx" />
+    <Content Include="Admin\Job_Details.aspx" />
+    <Content Include="Admin\Job_Listing.aspx" />
     <Content Include="Admin\tooplate-Recruitify-job.css" />
     <Content Include="Admin\User_Listing.aspx" />
     <Content Include="App_Data\Recruitify_db.mdf" />
@@ -248,12 +249,19 @@
     <Compile Include="Admin\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Job-Listing.aspx.cs">
-      <DependentUpon>Job-Listing.aspx</DependentUpon>
+    <Compile Include="Admin\Job_Details.aspx.cs">
+      <DependentUpon>Job_Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Job-Listing.aspx.designer.cs">
-      <DependentUpon>Job-Listing.aspx</DependentUpon>
+    <Compile Include="Admin\Job_Details.aspx.designer.cs">
+      <DependentUpon>Job_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Job_Listing.aspx.cs">
+      <DependentUpon>Job_Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Job_Listing.aspx.designer.cs">
+      <DependentUpon>Job_Listing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\User_Listing.aspx.cs">
       <DependentUpon>User_Listing.aspx</DependentUpon>
