@@ -33,7 +33,7 @@
                         </div>
 
                         
-                        <asp:DataList ID="jobList" runat="server">
+                        <asp:DataList ID="jobList" runat="server" OnItemCommand="jobList_ItemCommand">
 
                             <ItemTemplate>
                                 <div class="col-lg-12 col-12"> 
@@ -48,24 +48,25 @@
                                                     <asp:LinkButton ID="LinkButton1" class="job-title-link" runat="server" CommandArgument='<%# Eval("J_Id") %>' Text='<%# Eval("J_Title") %>'></asp:LinkButton>
                                                 </h4>
                                                 <div class="d-flex flex-wrap align-items-center">
-                                                    <p class="job-location mb-0" style="width:20%">
+                                                    <p class="job-location mb-0">
                                                         <i class="custom-icon bi-geo-alt me-1"></i>
                                                             <asp:Label ID="lblCity" runat="server" Text='<%# Eval("J_City") +", "+Eval("J_Country") %>'></asp:Label>
                                                     </p>
                                                     <p class="job-date mb-0">
-                                                        <iconify-icon icon="bi:globe"></iconify-icon>
-                                                        <asp:Label ID="lblWeb" runat="server" Text='<%# "Posted by " + Eval("U_First_Name")+" "+Eval("U_Last_Name") %>'  ></asp:Label>
+                                                        <iconify-icon icon="bi:globe">
+                        </iconify-icon>
+                                                        <asp:Label ID="lblPostedBy" runat="server" Text='<%# "Posted by " + Eval("U_First_Name")+" "+Eval("U_Last_Name") %>'  ></asp:Label>
                                                     </p>
                                                     <p class="job-price mb-0" style="margin-left:0;" >
                                                        <i class="fas fa-wallet"></i>
-                                                        <b><asp:Label ID="lblMobile" runat="server" Text='<%# Eval("J_Salary") %>'></asp:Label></b>
+                                                        <b><asp:Label ID="lblSalary" runat="server" Text='<%# Eval("J_Salary") %>'></asp:Label></b>
                                                     </p>
                                                     <div class="d-flex">
                                                         <p class="mb-0">
-                                                            <asp:Label ID="lblEyear" runat="server" class="badge" Text='<%# Eval("J_Type") %>'></asp:Label>
+                                                            <asp:Label ID="lblJobType" runat="server" class="badge" Text='<%# Eval("J_Type") %>'></asp:Label>
                                                         </p>
                                                         <p class="mb-0">
-                                                            <asp:Label ID="lbluser" class="badge badge-level" runat="server" Text='<%# "Posted at "+Eval("J_Post_Time") %>'></asp:Label>
+                                                            <asp:Label ID="lblJobPostTime" class="badge badge-level" runat="server" Text='<%# "Posted at "+Eval("J_Post_Time") %>'></asp:Label>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -76,7 +77,7 @@
                                                 <input type="hidden" name="cid" value="'.$result['C_Id'].'">
                                                 <button type="submit" name="delete" class="custom-btn btn">Delete</button>
                                             </form>--%>
-                                            <asp:LinkButton ID="lbDeleteCompany" runat="server" CssClass="custom-btn btn" CommandArgument='<%# Eval("J_Id") %>' CommandName="cmdComDlt">Delete</asp:LinkButton>
+                                            <asp:LinkButton ID="lbDltJob" runat="server" CssClass="custom-btn btn" CommandArgument='<%# Eval("J_Id") %>' CommandName="cmdJobDlt">Delete</asp:LinkButton>
                                         </div>
 
                                     </div>

@@ -4,7 +4,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <main>
 
-            <header class="site-header">
+            <header class="site-header section-padding">
                 <div class="section-overlay"></div>
 
                 <div class="container">
@@ -27,7 +27,7 @@
             </header>
 
 
-            <section class="about-section">
+            <section class="about-section section-padding">
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
 

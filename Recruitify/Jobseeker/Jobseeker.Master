@@ -28,7 +28,6 @@
 
         <link href="tooplate-Recruitify-job.css" rel="stylesheet">
         
-
         <link rel="shortcut icon" type="image/x-icon" href="../images/logo.png" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -217,11 +216,11 @@
         </footer>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/counter.js"></script>
+        <script src="../js/custom.js"></script>
             </asp:ContentPlaceHolder>
         </div>
     </form>

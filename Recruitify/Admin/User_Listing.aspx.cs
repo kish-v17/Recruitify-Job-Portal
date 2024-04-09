@@ -35,5 +35,7 @@ namespace Recruitify.Admin
             userList.DataSource = ds;
             userList.DataBind();
         }
+
+
     }
 }

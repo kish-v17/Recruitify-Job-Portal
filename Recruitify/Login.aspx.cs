@@ -28,36 +28,58 @@ namespace Recruitify
         protected void btnlogin_Click(object sender, EventArgs e)
         {
             GetCon();
-            if (!(string.IsNullOrEmpty(txtLogEml.Text) && string.IsNullOrEmpty(txtLogPass.Text)))
+            if (!string.IsNullOrEmpty(txtLogEml.Text) && !string.IsNullOrEmpty(txtLogPass.Text))
             {
                 eml = ConfigurationManager.AppSettings["Email"];
                 pass = ConfigurationManager.AppSettings["Password"];
+
                 if (txtLogEml.Text == eml && txtLogPass.Text == pass)
                 {
+                    // Admin login
                     Session["Id"] = "admin@admin.com";
                     Session["Name"] = "Admin";
                     Session["Image"] = "../images/user-img/user-profile/Admin.png";
-                    Response.Redirect("Admin/User_Listing.aspx");
+                    Response.Redirect("Admin/Index.aspx");
                 }
                 else
                 {
-                    SqlDataAdapter da = new SqlDataAdapter("select U_First_Name,U_Id,U_Type_Id,U_Image from User_tbl where U_Email='" + txtLogEml.Text + "' and U_Password='" + txtLogPass.Text + "'", con);
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT U_First_Name, U_Id, U_Type_Id, U_Image FROM User_tbl WHERE U_Email = @Email AND U_Password = @Password", con);
+                    da.SelectCommand.Parameters.AddWithValue("@Email", txtLogEml.Text);
+                    da.SelectCommand.Parameters.AddWithValue("@Password", txtLogPass.Text);
+
                     DataSet ds = new DataSet();
                     da.Fill(ds);
-                    
-                        Session["Id"] = ds.Tables[0].Rows[0][1].ToString();
-                        Session["Name"] = ds.Tables[0].Rows[0][0].ToString();
-                        Session["Image"] = "../" + ds.Tables[0].Rows[0][3].ToString();
-                    if (ds.Tables[0].Rows[0][2].ToString().Equals("2"))
+
+                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                     {
-                        Response.Redirect("Employer/Index.aspx");
+                        Session["Id"] = ds.Tables[0].Rows[0]["U_Id"].ToString();
+                        Session["Name"] = ds.Tables[0].Rows[0]["U_First_Name"].ToString();
+                        Session["Image"] = "../" + ds.Tables[0].Rows[0]["U_Image"].ToString();
+
+                        if (ds.Tables[0].Rows[0]["U_Type_Id"].ToString() == "2")
+                        {
+                            Response.Redirect("Employer/Index.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("Jobseeker/Index.aspx");
+                        }
                     }
                     else
                     {
-                        Response.Redirect("Jobseeker/Index.aspx");
+                        // Password is incorrect
+                        string script = "alert('Incorrect email or password.');";
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
                     }
                 }
             }
+            else
+            {
+                // Fields are empty
+                string script = "alert('Please enter both email and password.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+            }
+
         }
     }
 }

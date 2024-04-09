@@ -45,7 +45,7 @@
                                         <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
                                             <div class="mb-3">
                                                 <h4 class="job-title mb-lg-0">
-                                                        <asp:Label ID="Label1" runat="server" class="job-title-link" Text='<%# Eval("U_First_Name") +" "+Eval("U_Last_Name") %>'></asp:Label>
+                                                        <asp:Label ID="lblUser" runat="server" class="job-title-link" Text='<%# Eval("U_First_Name") +" "+Eval("U_Last_Name") %>'></asp:Label>
                                                 </h4>
                                                 <div class="d-flex flex-wrap align-items-center">
                                                     <p class="job-location mb-0" style="width:20%">
@@ -54,7 +54,7 @@
                                                     </p>
 
                                                     <p class="job-date mb-0" style="width:180px">
-                                                        <asp:Label ID="lblWeb" runat="server" Text='<%# Eval("U_Email") %>'></asp:Label>
+                                                        <asp:Label ID="lblEml" runat="server" Text='<%# Eval("U_Email") %>'></asp:Label>
                                                     </p>
 
                                                     <p class="job-price mb-0" style="margin-left:0;" >
@@ -63,10 +63,10 @@
                                                     </p>
                                                     <div class="d-flex">
                                                         <p class="mb-0">
-                                                            <asp:Label ID="lblEyear" runat="server" class="badge" Text='<%# Eval("U_Type") %>'></asp:Label>
+                                                            <asp:Label ID="lblUsertype" runat="server" class="badge" Text='<%# Eval("U_Type") %>'></asp:Label>
                                                         </p>
                                                         <p class="mb-0">
-                                                            <asp:Label ID="lbluser" class="badge badge-level" runat="server" Text='<%# "Reg at " + Eval("U_Reg_Date") %>'></asp:Label>
+                                                            <asp:Label ID="lblRegDate" class="badge badge-level" runat="server" Text='<%# "Reg at " + Eval("U_Reg_Date") %>'></asp:Label>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -77,7 +77,7 @@
                                                 <input type="hidden" name="cid" value="'.$result['C_Id'].'">
                                                 <button type="submit" name="delete" class="custom-btn btn">Delete</button>
                                             </form>--%>
-                                            <asp:LinkButton ID="lbDeleteCompany" runat="server" CssClass="custom-btn btn" CommandArgument='<%# Eval("U_Id") %>' CommandName="cmdComDlt">Delete</asp:LinkButton>
+                                            <asp:LinkButton ID="lbDltUser" runat="server" CssClass="custom-btn btn" CommandArgument='<%# Eval("U_Id") %>' CommandName="cmdUserDlt">Delete</asp:LinkButton>
                                         </div>
 
                                     </div>

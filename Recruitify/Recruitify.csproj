@@ -113,6 +113,7 @@
     <Content Include="Admin\Applications.aspx" />
     <Content Include="Admin\Company_Listing.aspx" />
     <Content Include="Admin\Contact.aspx" />
+    <Content Include="Admin\Index.aspx" />
     <Content Include="Admin\Job_Details.aspx" />
     <Content Include="Admin\Job_Listing.aspx" />
     <Content Include="Admin\tooplate-Recruitify-job.css" />
@@ -183,7 +184,9 @@
     <Content Include="images\user-img\company-profile\twitter.png" />
     <Content Include="images\user-img\company-profile\yelp.png" />
     <Content Include="images\user-img\user-profile\Admin.png" />
+    <Content Include="images\user-img\user-profile\Bhoomi.jpeg" />
     <Content Include="images\user-img\user-profile\Kishan.jpg" />
+    <Content Include="images\user-img\user-profile\Ram.jpg" />
     <Content Include="images\user-img\user-profile\Vibhuti.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Jobseeker\About.aspx" />
@@ -248,6 +251,13 @@
     </Compile>
     <Compile Include="Admin\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Job_Details.aspx.cs">
       <DependentUpon>Job_Details.aspx</DependentUpon>

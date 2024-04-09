@@ -37,5 +37,17 @@ namespace Recruitify.Admin
             jobList.DataBind();
         }
 
+        protected void jobList_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "cmdJobDlt")
+            {
+                ViewState["id"] = Convert.ToInt32(e.CommandArgument);
+
+                cmd=new SqlCommand("delete from Job_List_tbl where J_Id=@id",con);
+                cmd.Parameters.AddWithValue("@id", ViewState["id"]);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }
